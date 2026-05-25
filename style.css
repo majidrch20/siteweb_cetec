@@ -693,136 +693,323 @@ button {
   background-color: var(--black);
 }
 
-.videos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.video-card {
-  background: var(--dark);
-  border: 1px solid var(--gray-800);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-med);
-}
-
-.video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(245,161,26,0.3);
-}
-
-.video-wrapper {
+/* -------------------------------------------------------
+   VIDEO SHOWCASE — Swipe Carousel
+-------------------------------------------------------- */
+.video-showcase {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background-color: #000;
   overflow: hidden;
+  margin-top: 48px;
+  /* entry animation */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
 }
 
-.video-element {
+.video-showcase.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The horizontal track */
+.vshow-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Each slide takes full width */
+.vshow-slide {
+  min-width: 100%;
+  width: 100%;
+  padding: 0 40px 48px;
+  box-sizing: border-box;
+}
+
+/* The video screen wrapper */
+.vshow-screen {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06);
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.vshow-screen::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(ellipse at center, rgba(245,161,26,0.12) 0%, transparent 70%);
+  filter: blur(30px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+
+.vshow-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.video-placeholder {
+/* Permanent info label over video (bottom-left, always visible) */
+.vshow-label {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  z-index: 3;
+  padding: 60px 32px 28px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  text-align: left;
+  pointer-events: none;
+}
+
+.vshow-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-family: var(--font-heading);
+  margin-bottom: 10px;
+}
+
+.vshow-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  margin-bottom: 4px;
+}
+
+.vshow-subtitle {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+/* Swipe hint */
+.vshow-swipe-hint {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 2;
-  transition: all var(--transition-med);
+  gap: 6px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  animation: swipeHintBounce 1.5s ease-in-out infinite;
+  pointer-events: none;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 40px;
+  padding: 10px 14px;
 }
 
-.video-placeholder-bg {
+.vshow-swipe-hint i {
+  font-size: 1rem;
+  color: var(--orange);
+}
+
+.vshow-swipe-hint.gone {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes swipeHintBounce {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50%       { transform: translateY(-50%) translateX(-7px); }
+}
+
+/* Info panel below screen */
+.vshow-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.vshow-info-badge {
+  display: inline-block;
+  background: rgba(245,161,26,0.12);
+  border: 1px solid rgba(245,161,26,0.25);
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.vshow-info-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.vshow-info-desc {
+  color: var(--gray-400);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Navigation arrows */
+.vshow-arrow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(23,23,23,0.9), rgba(11,11,11,0.95));
-  transition: all var(--transition-med);
-}
-
-.video-wrapper:hover .video-placeholder-bg {
-  background: linear-gradient(135deg, rgba(245,161,26,0.15), rgba(11,11,11,0.9));
-}
-
-.video-placeholder .play-btn {
-  position: relative;
-  width: 70px;
-  height: 70px;
-  background: var(--orange);
+  top: calc(50% - 50px);
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(18,18,18,0.75);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  box-shadow: 0 0 25px rgba(245,161,26,0.4);
-  transition: all var(--transition-med);
-  z-index: 3;
+  transition: all 0.3s ease;
 }
 
-.video-placeholder .play-btn i {
-  margin-left: 4px;
-  transition: transform var(--transition-fast);
+.vshow-arrow:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 0 20px rgba(245,161,26,0.4);
 }
 
-.video-wrapper:hover .play-btn {
-  background: var(--white);
+.vshow-arrow:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.vshow-arrow-prev { left: 12px; }
+.vshow-arrow-next { right: 12px; }
+
+/* Sound toggle button */
+.vshow-sound-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 30px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vshow-sound-btn::after {
+  content: 'Son coupé';
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-family: var(--font-body);
+}
+
+.vshow-sound-btn:hover {
+  background: rgba(245,161,26,0.2);
+  border-color: rgba(245,161,26,0.5);
+  color: #fff;
+}
+
+.vshow-sound-btn.unmuted {
+  background: rgba(245,161,26,0.15);
+  border-color: var(--orange);
   color: var(--orange);
-  transform: scale(1.1);
-  box-shadow: 0 0 35px rgba(255,255,255,0.6);
+  box-shadow: 0 0 0 0 rgba(245,161,26,0.4);
+  animation: soundPulse 2s ease-in-out infinite;
 }
 
-.video-wrapper:hover .play-btn i {
-  transform: scale(1.1);
+.vshow-sound-btn.unmuted::after {
+  content: 'Son activé';
+  color: var(--orange);
 }
 
-.video-placeholder-text {
+@keyframes soundPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245,161,26,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(245,161,26,0); }
+}
+
+/* Simple dot nav buttons */
+.vshow-dots-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0 8px;
   position: relative;
-  color: var(--cream);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-  z-index: 3;
-  transition: color var(--transition-med);
+  z-index: 5;
 }
 
-.video-wrapper:hover .video-placeholder-text {
-  color: var(--orange);
+.vshow-dot-btn {
+  width: 32px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
 }
 
-.video-info {
-  padding: 25px;
+.vshow-dot-btn:hover {
+  background: rgba(245,161,26,0.5);
 }
 
-.video-title {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  color: var(--white);
-  margin-bottom: 10px;
-  font-weight: 600;
+.vshow-dot-btn.active {
+  width: 52px;
+  background: var(--orange);
+  box-shadow: 0 0 10px rgba(245,161,26,0.5);
 }
 
-.video-desc {
-  font-size: 0.95rem;
-  color: var(--gray-400);
-  line-height: 1.6;
+/* Responsive */
+@media (max-width: 768px) {
+  .vshow-slide    { padding: 0 12px 16px; }
+  .vshow-title    { font-size: 1.2rem; }
+  .vshow-label    { padding: 40px 14px 16px; }
+  .vshow-arrow    { width: 38px; height: 38px; font-size: 0.85rem; }
+  .vshow-arrow-prev { left: 4px; }
+  .vshow-arrow-next { right: 4px; }
 }
+
+
 
 /* =============================================
    8. À PROPOS

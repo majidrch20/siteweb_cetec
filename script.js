@@ -536,26 +536,162 @@
 
 
 /* ============================================================
-   12. VIDEOS PLAYER — Handle click on placeholders
+   12. VIDEOS PLAYER — Handle click on placeholders & Tab switching
    ============================================================ */
-(function initVideoPlayers() {
-  const placeholders = document.querySelectorAll('.video-placeholder');
-  
-  placeholders.forEach(placeholder => {
-    placeholder.addEventListener('click', function() {
-      const wrapper = this.parentElement;
-      const video = wrapper.querySelector('.video-element');
-      if (video) {
-        this.style.opacity = '0';
-        this.style.pointerEvents = 'none';
-        setTimeout(() => {
-          this.style.display = 'none';
-        }, 350);
-        video.play();
+(function initVideoShowcase() {
+  const showcase  = document.getElementById('video-showcase');
+  if (!showcase) return;
+
+  const track     = document.getElementById('vshow-track');
+  const slides    = showcase.querySelectorAll('.vshow-slide');
+  const thumbs    = showcase.querySelectorAll('.vshow-dot-btn');
+  const prevBtn   = document.getElementById('vshow-prev');
+  const nextBtn   = document.getElementById('vshow-next');
+  const swipeHint = document.getElementById('vshow-swipe-hint');
+  const soundBtns = showcase.querySelectorAll('.vshow-sound-btn');
+  const videos    = showcase.querySelectorAll('.vshow-video');
+
+  let current = 0;
+  const total = slides.length;
+  let isMuted = true; // Videos must start muted for autoplay compliance
+
+  function updateMuteState() {
+    videos.forEach(vid => {
+      vid.muted = isMuted;
+    });
+
+    soundBtns.forEach(btn => {
+      const icon = btn.querySelector('i');
+      if (isMuted) {
+        btn.classList.remove('unmuted');
+        if (icon) icon.className = 'fa-solid fa-volume-xmark';
+      } else {
+        btn.classList.add('unmuted');
+        if (icon) icon.className = 'fa-solid fa-volume-high';
       }
     });
+  }
+
+  // Bind click event to all sound buttons
+  soundBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isMuted = !isMuted;
+      updateMuteState();
+    });
   });
+
+  /* ---- Go to slide + autoplay ---- */
+  function goTo(index) {
+    if (index < 0 || index >= total) return;
+
+    // Pause all other videos & reset their time
+    slides.forEach((slide, i) => {
+      const vid = slide.querySelector('.vshow-video');
+      if (vid && i !== index) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
+    });
+
+    current = index;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    // Update thumbnail strip active state
+    thumbs.forEach(t => t.classList.remove('active'));
+    if (thumbs[current]) thumbs[current].classList.add('active');
+
+    // Arrow states
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+
+    // Hide swipe hint once navigated
+    if (swipeHint && current > 0) swipeHint.classList.add('gone');
+
+    // Autoplay the current video
+    const activeVideo = slides[current].querySelector('.vshow-video');
+    if (activeVideo) {
+      activeVideo.muted = isMuted;
+      activeVideo.play().catch(() => {
+        // If play failed and it was unmuted, try playing muted as fallback
+        if (!activeVideo.muted) {
+          isMuted = true;
+          updateMuteState();
+          activeVideo.play().catch(() => {});
+        }
+      });
+    }
+  }
+
+  /* ---- Arrows ---- */
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  /* ---- Thumbnail strip ---- */
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      goTo(parseInt(thumb.getAttribute('data-slide'), 10));
+    });
+  });
+
+  /* ---- Keyboard ---- */
+  document.addEventListener('keydown', e => {
+    const rect = showcase.getBoundingClientRect();
+    if (rect.top > window.innerHeight || rect.bottom < 0) return;
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
+
+  /* ---- Touch / Swipe ---- */
+  let touchStartX = 0;
+  let isDragging  = false;
+
+  showcase.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    isDragging  = false;
+  }, { passive: true });
+
+  showcase.addEventListener('touchmove', () => {
+    isDragging = true;
+  }, { passive: true });
+
+  showcase.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) goTo(current + 1); // swipe left → next
+      else         goTo(current - 1); // swipe right → prev
+    }
+    isDragging = false;
+  }, { passive: true });
+
+  /* ---- Auto-hide swipe hint after 4s ---- */
+  if (swipeHint) setTimeout(() => swipeHint.classList.add('gone'), 4000);
+
+  /* ---- Init: set arrows + thumbs (no autoplay yet, wait for user scroll) ---- */
+  prevBtn.disabled = true;
+  nextBtn.disabled = total <= 1;
+  thumbs[0] && thumbs[0].classList.add('active');
+
+  /* ---- Autoplay / Pause video depending on section visibility ---- */
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const activeVideo = slides[current].querySelector('.vshow-video');
+      if (entry.isIntersecting) {
+        if (activeVideo) {
+          activeVideo.muted = isMuted;
+          activeVideo.play().catch(() => {});
+        }
+      } else {
+        if (activeVideo) {
+          activeVideo.pause();
+        }
+      }
+    });
+  }, { threshold: 0.2 });
+  sectionObserver.observe(showcase);
 })();
+
 
 
 /* ============================================================

@@ -120,55 +120,76 @@
         <span class="section-tag">CETEC en Action</span>
         <h2 class="section-title">Nos <span class="highlight">Vidéos</span></h2>
         <div class="section-divider"></div>
-        <p class="section-desc">Découvrez nos événements et l'ambiance unique de notre club en vidéo.</p>
-      </div>
-
-      <div class="videos-grid" data-aos>
-        
-        <!-- Vidéo 1 -->
-        <div class="video-card">
-          <div class="video-wrapper">
-            <video class="video-element" controls id="video-1">
-              <source src="" type="video/mp4">
-              Votre navigateur ne prend pas en charge les vidéos.
-            </video>
-            <div class="video-placeholder" id="video-placeholder-1">
-              <div class="video-placeholder-bg"></div>
-              <div class="play-btn">
-                <i class="fa-solid fa-play"></i>
-              </div>
-              <div class="video-placeholder-text">Emplacement Vidéo 1</div>
-            </div>
-          </div>
-          <div class="video-info">
-            <h3 class="video-title">Aftermovie Événements</h3>
-            <p class="video-desc">Un aperçu dynamique de l'énergie, de la culture et du partage lors de nos activités majeures.</p>
-          </div>
-        </div>
-
-        <!-- Vidéo 2 -->
-        <div class="video-card">
-          <div class="video-wrapper">
-            <video class="video-element" controls id="video-2">
-              <source src="" type="video/mp4">
-              Votre navigateur ne prend pas en charge les vidéos.
-            </video>
-            <div class="video-placeholder" id="video-placeholder-2">
-              <div class="video-placeholder-bg"></div>
-              <div class="play-btn">
-                <i class="fa-solid fa-play"></i>
-              </div>
-              <div class="video-placeholder-text">Emplacement Vidéo 2</div>
-            </div>
-          </div>
-          <div class="video-info">
-            <h3 class="video-title">Présentation & Témoignages</h3>
-            <p class="video-desc">Découvrez la vision de nos membres et leur parcours au sein de la famille CETEC.</p>
-          </div>
-        </div>
-
       </div>
     </div>
+
+    <!-- Swipe Video Showcase -->
+    <div class="video-showcase" data-aos id="video-showcase">
+      <!-- Track that slides horizontally -->
+      <div class="vshow-track" id="vshow-track">
+
+        <!-- Slide 1 -->
+        <div class="vshow-slide" id="vshow-slide-0">
+          <div class="vshow-screen">
+            <video class="vshow-video" id="vshow-video-0"
+              poster="assets/images/thumb_by_the_sea.jpg"
+              playsinline muted>
+              <source src="videos/by_the_sea.mp4" type="video/mp4">
+            </video>
+            <!-- Info label over video (bottom-left) -->
+            <div class="vshow-label">
+              <span class="vshow-badge"><i class="fa-solid fa-location-dot"></i> CAPO NEGRO</span>
+              <h3 class="vshow-title">Sortie Back to the Mixtape</h3>
+            </div>
+            <!-- Swipe hint -->
+            <div class="vshow-swipe-hint" id="vshow-swipe-hint">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>swipe</span>
+            </div>
+            <!-- Sound toggle -->
+            <button class="vshow-sound-btn" id="vshow-sound-btn" aria-label="Activer le son" title="Activer / Couper le son">
+              <i class="fa-solid fa-volume-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="vshow-slide" id="vshow-slide-1">
+          <div class="vshow-screen">
+            <video class="vshow-video" id="vshow-video-1"
+              poster="assets/images/thumb_golden_light.jpg"
+              playsinline muted>
+              <source src="videos/golden_light.mp4" type="video/mp4">
+            </video>
+            <!-- Info label over video (bottom-left) -->
+            <div class="vshow-label">
+              <span class="vshow-badge"><i class="fa-solid fa-location-dot"></i> CENTRE CULTUREL TÉTOUAN</span>
+              <h3 class="vshow-title">Journée Culturelle JC</h3>
+            </div>
+            <!-- Sound toggle -->
+            <button class="vshow-sound-btn" aria-label="Activer le son" title="Activer / Couper le son">
+              <i class="fa-solid fa-volume-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /.vshow-track -->
+
+      <!-- Side arrows (hidden on mobile, kept for desktop) -->
+      <button class="vshow-arrow vshow-arrow-prev" id="vshow-prev" aria-label="Précédent">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="vshow-arrow vshow-arrow-next" id="vshow-next" aria-label="Suivant">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Dot nav buttons -->
+      <div class="vshow-dots-nav" id="vshow-dots-nav">
+        <button class="vshow-dot-btn active" data-slide="0" id="vnavbtn-0" aria-label="Sortie Back to the Mixtape"></button>
+        <button class="vshow-dot-btn" data-slide="1" id="vnavbtn-1" aria-label="Journée Culturelle JC"></button>
+      </div>
+
+    </div><!-- /.video-showcase -->
   </section>
 
   <!-- ========================
