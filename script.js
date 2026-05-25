@@ -227,7 +227,7 @@
    5. CONTACT FORM — Validation + Fake submit
    ============================================================ */
 (function initContactForm() {
-  const form        = document.getElementById('contact-form');
+  const form        = document.getElementById('contactForm');
   const btnText     = document.getElementById('btn-submit-text');
   const btnIcon     = document.getElementById('btn-submit-icon');
   const successMsg  = document.getElementById('form-success');
@@ -292,7 +292,7 @@
 
     if (!valid) return;
 
-    // Simulate sending
+    // Send data to live PHP backend with local fallback for static previews
     const submitBtn = form.querySelector('[type="submit"]');
     if (submitBtn) submitBtn.disabled = true;
     if (btnText) btnText.textContent = 'Envoi en cours...';
@@ -300,24 +300,90 @@
       btnIcon.className = 'fa-solid fa-spinner fa-spin';
     }
 
-    setTimeout(() => {
-      // Show success
-      if (successMsg) successMsg.style.display = 'flex';
+    const formData = new FormData(form);
+
+    // If running on Live Server (e.g. port 5500) or file://, direct requests to XAMPP backend on port 80
+    const isLocal = window.location.protocol === 'file:' || (window.location.port && window.location.port !== '80' && window.location.port !== '443');
+    const fetchUrl = isLocal ? 'http://localhost/siteweb_cetec/contact.php' : 'contact.php';
+
+    fetch(fetchUrl, {
+      method: 'POST',
+      body: formData
+    })
+    .then(async response => {
+      let data;
+      try {
+        data = await response.json();
+      } catch (e) {
+        // Not a JSON response
+      }
+
+      if (response.ok && data && data.status === 'success') {
+        return data;
+      } else {
+        const msg = (data && data.message) ? data.message : `Erreur serveur (${response.status})`;
+        throw new Error(msg);
+      }
+    })
+    .then(data => {
+      if (successMsg) {
+        successMsg.className = 'form-success';
+        successMsg.style.background = '';
+        successMsg.style.borderColor = '';
+        successMsg.style.color = '';
+        const icon = successMsg.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-circle-check';
+        successMsg.querySelector('span').textContent = data.message;
+        successMsg.style.display = 'flex';
+      }
       form.reset();
       fields.forEach(({ input }) => {
         if (input) input.style.borderColor = '';
       });
-
-      // Reset button
+    })
+    .catch(error => {
+      console.warn("Erreur de soumission :", error);
+      
+      if (isLocal) {
+        // We are previewing locally, and the connection to local XAMPP backend failed
+        if (successMsg) {
+          successMsg.className = 'form-success form-warning-fallback';
+          successMsg.style.background = 'rgba(247, 148, 29, 0.12)';
+          successMsg.style.borderColor = 'rgba(247, 148, 29, 0.4)';
+          successMsg.style.color = '#f7941d';
+          const icon = successMsg.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-triangle-exclamation';
+          successMsg.querySelector('span').innerHTML = "<strong>Message simulé !</strong><br><small style='font-size:0.8rem;opacity:0.95;'>Pour enregistrer en BDD depuis Live Server, assurez-vous d'avoir démarré Apache et MySQL dans XAMPP.</small>";
+          successMsg.style.display = 'flex';
+        }
+        form.reset();
+        fields.forEach(({ input }) => {
+          if (input) input.style.borderColor = '';
+        });
+      } else {
+        // Actual server/database error
+        if (successMsg) {
+          successMsg.className = 'form-success form-error-fallback';
+          successMsg.style.background = 'rgba(255, 107, 107, 0.12)';
+          successMsg.style.borderColor = 'rgba(255, 107, 107, 0.4)';
+          successMsg.style.color = '#ff6b6b';
+          const icon = successMsg.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-circle-xmark';
+          successMsg.querySelector('span').innerHTML = "<strong>Échec de l'envoi :</strong> " + error.message;
+          successMsg.style.display = 'flex';
+        }
+      }
+    })
+    .finally(() => {
       if (submitBtn) submitBtn.disabled = false;
-      if (btnText) btnText.textContent = 'Envoyer le message';
+      if (btnText) btnText.textContent = 'Contacter';
       if (btnIcon) btnIcon.className = 'fa-solid fa-paper-plane';
 
-      // Hide success after 6 seconds
+      // Hide success after 10 seconds (giving more time to read warnings)
       setTimeout(() => {
         if (successMsg) successMsg.style.display = 'none';
-      }, 6000);
-    }, 1600);
+      }, 10000);
+    });
   });
 })();
 

@@ -1547,7 +1547,19 @@ button {
   margin: 0 auto;
 }
 
-.team-card:hover .avatar-placeholder {
+.avatar-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--orange);
+  transition: all var(--transition-med);
+  display: block;
+  margin: 0 auto;
+}
+
+.team-card:hover .avatar-placeholder,
+.team-card:hover .avatar-img {
   border-color: var(--orange);
   box-shadow: 0 0 0 6px rgba(245,161,26,0.15);
 }
