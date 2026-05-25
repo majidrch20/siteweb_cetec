@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CETEC - Club de l'ENSA de Tétouan pour l'Échange Culturel. Club estudiantin culturel, social et linguistique fondé en 2012." />
+  <meta name="keywords" content="CETEC, ENSA Tétouan, club culturel, échange culturel, leadership, communication" />
+  <meta property="og:title" content="CETEC – Là où la culture rencontre l'excellence" />
+  <meta property="og:description" content="Club culturel, social et linguistique de l'ENSA Tétouan." />
+  <title>CETEC – Là où la culture rencontre l'excellence</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================
+       NAVBAR
+  ======================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#accueil" class="nav-logo" id="nav-logo-link">
+        <img src="assets/images/cetec_logo.png" alt="Logo CETEC" class="logo-img" />
+        <span class="logo-text">CETEC</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#accueil" class="nav-link active" id="nav-accueil">Accueil</a></li>
+        <li><a href="#videos" class="nav-link" id="nav-videos">Vidéos</a></li>
+        <li><a href="#apropos" class="nav-link" id="nav-apropos">À propos</a></li>
+        <li><a href="#activites" class="nav-link" id="nav-activites">Activités</a></li>
+        <li><a href="#news" class="nav-link" id="nav-news">Agenda</a></li>
+        <li><a href="#equipe" class="nav-link" id="nav-equipe">Équipe</a></li>
+        <li><a href="#galerie" class="nav-link" id="nav-galerie">Galerie</a></li>
+        <li><a href="#livre-dor" class="nav-link" id="nav-livredor">Livre d'Or</a></li>
+        <li><a href="#partenaires" class="nav-link" id="nav-partenaires">Partenaires</a></li>
+        <li><a href="#contact" class="nav-link nav-cta" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <!-- Burger Menu -->
+      <button class="nav-burger" id="nav-burger" aria-label="Menu navigation" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- ========================
+       HERO SECTION
+  ======================== -->
+  <section class="hero" id="accueil">
+    <!-- Background image -->
+    <div class="hero-bg">
+      <img src="assets/images/hero_bg.png" alt="Hero background" class="hero-bg-img" />
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <!-- Decorative shapes -->
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="hero-content container">
+      <div class="hero-logo-wrap">
+        <img src="assets/images/cetec_logo.png" alt="CETEC Logo" class="hero-logo" id="hero-logo" />
+      </div>
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>ENSA Tétouan — Fondé en 2012</span>
+        </div>
+        <h1 class="hero-title" id="hero-title">
+          <span class="title-main">CETEC</span>
+        </h1>
+        <p class="hero-subtitle" id="hero-subtitle">Là où la culture rencontre l'excellence</p>
+        <p class="hero-desc" id="hero-desc">
+          Club culturel, social et linguistique de l'ENSA Tétouan, CETEC valorise l'échange,
+          la communication, le leadership et l'expression des étudiants ingénieurs.
+        </p>
+        <div class="hero-actions" id="hero-actions">
+          <a href="#apropos" class="btn btn-primary" id="btn-decouvrir">
+            <span>Découvrir le club</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#activites" class="btn btn-outline" id="btn-activites">
+            <span>Voir nos activités</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scroll-indicator">
+      <span class="scroll-text">Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========================
+       VIDÉOS
+  ======================== -->
+  <section class="videos section-padding bg-dark" id="videos">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">CETEC en Action</span>
+        <h2 class="section-title">Nos <span class="highlight">Vidéos</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Découvrez nos événements et l'ambiance unique de notre club en vidéo.</p>
+      </div>
+
+      <div class="videos-grid" data-aos>
+        
+        <!-- Vidéo 1 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video class="video-element" controls id="video-1">
+              <source src="" type="video/mp4">
+              Votre navigateur ne prend pas en charge les vidéos.
+            </video>
+            <div class="video-placeholder" id="video-placeholder-1">
+              <div class="video-placeholder-bg"></div>
+              <div class="play-btn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="video-placeholder-text">Emplacement Vidéo 1</div>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Aftermovie Événements</h3>
+            <p class="video-desc">Un aperçu dynamique de l'énergie, de la culture et du partage lors de nos activités majeures.</p>
+          </div>
+        </div>
+
+        <!-- Vidéo 2 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video class="video-element" controls id="video-2">
+              <source src="" type="video/mp4">
+              Votre navigateur ne prend pas en charge les vidéos.
+            </video>
+            <div class="video-placeholder" id="video-placeholder-2">
+              <div class="video-placeholder-bg"></div>
+              <div class="play-btn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="video-placeholder-text">Emplacement Vidéo 2</div>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Présentation & Témoignages</h3>
+            <p class="video-desc">Découvrez la vision de nos membres et leur parcours au sein de la famille CETEC.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       À PROPOS
+  ======================== -->
+  <section class="apropos section-padding" id="apropos">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Notre identité</span>
+        <h2 class="section-title">À propos de <span class="highlight">CETEC</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="apropos-content">
+        <div class="apropos-text" data-aos>
+          <p>
+            Fondé en 2012, le <strong>Club de l'ENSA de Tétouan pour l'Échange Culturel</strong> est un club à but non lucratif qui œuvre pour le développement personnel, culturel et communicationnel des élèves ingénieurs.
+          </p>
+          <p>
+            À travers ses activités, CETEC encourage la prise de parole, l'esprit critique, le leadership, la culture générale et l'ouverture d'esprit. Un espace unique où les étudiants forgent leur personnalité et élargissent leurs horizons.
+          </p>
+        </div>
+
+        <div class="apropos-cards" data-aos>
+          <!-- Card 1 -->
+          <div class="value-card" id="card-communication">
+            <div class="value-card-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="value-card-title">Communication</h3>
+            <p class="value-card-desc">Développer l'art de s'exprimer et d'écouter l'autre avec clarté et impact.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="value-card" id="card-leadership">
+            <div class="value-card-icon">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="value-card-title">Leadership</h3>
+            <p class="value-card-desc">Former les leaders de demain avec confiance, vision et responsabilité.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="value-card" id="card-culture">
+            <div class="value-card-icon">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <h3 class="value-card-title">Culture</h3>
+            <p class="value-card-desc">Explorer les cultures du monde, enrichir sa pensée et son ouverture d'esprit.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="value-card" id="card-expression">
+            <div class="value-card-icon">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+            <h3 class="value-card-title">Expression libre</h3>
+            <p class="value-card-desc">Un espace bienveillant pour partager ses idées, écrire et créer librement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       OBJECTIFS / MISSION
+  ======================== -->
+  <section class="mission section-padding bg-dark" id="mission">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag section-tag-light">Notre mission</span>
+        <h2 class="section-title text-light">Nos <span class="highlight">Objectifs</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="mission-grid" data-aos>
+        <div class="mission-item" id="obj-communication">
+          <div class="mission-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+          <div class="mission-text">
+            <h4>Développer les compétences en communication</h4>
+            <p>Maîtriser l'art de s'exprimer à l'oral et à l'écrit dans plusieurs langues.</p>
+          </div>
+        </div>
+
+        <div class="mission-item" id="obj-prise-de-parole">
+          <div class="mission-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="mission-text">
+            <h4>Maîtriser la prise de parole en public</h4>
+            <p>Acquérir confiance et aisance devant un public grâce à des ateliers pratiques.</p>
+          </div>
+        </div>
+
+        <div class="mission-item" id="obj-echange">
+          <div class="mission-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div class="mission-text">
+            <h4>Encourager l'échange intellectuel</h4>
+            <p>Créer des espaces de débat et de dialogue pour enrichir les perspectives.</p>
+          </div>
+        </div>
+
+        <div class="mission-item" id="obj-culture">
+          <div class="mission-icon"><i class="fa-solid fa-landmark"></i></div>
+          <div class="mission-text">
+            <h4>Sensibiliser à l'importance de la culture</h4>
+            <p>Valoriser le patrimoine culturel local et international à travers des événements.</p>
+          </div>
+        </div>
+
+        <div class="mission-item" id="obj-lecture">
+          <div class="mission-icon"><i class="fa-solid fa-book-open"></i></div>
+          <div class="mission-text">
+            <h4>Développer le goût de la lecture et de l'écriture</h4>
+            <p>Encourager les étudiants à lire, écrire et partager leurs créations littéraires.</p>
+          </div>
+        </div>
+
+        <div class="mission-item" id="obj-expression">
+          <div class="mission-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+          <div class="mission-text">
+            <h4>Offrir un espace d'expression libre</h4>
+            <p>Garantir un environnement sûr et bienveillant pour s'exprimer librement.</p>
+          </div>
+        </div>
+
+        <div class="mission-item" id="obj-integration">
+          <div class="mission-icon"><i class="fa-solid fa-people-group"></i></div>
+          <div class="mission-text">
+            <h4>Favoriser l'intégration et la diversité</h4>
+            <p>Célébrer les différences culturelles et créer un sentiment d'appartenance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       ACTIVITÉS
+  ======================== -->
+  <section class="activites section-padding" id="activites">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Ce qu'on fait</span>
+        <h2 class="section-title">Nos <span class="highlight">Activités</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Des événements qui inspirent, rassemblent et font grandir.</p>
+      </div>
+
+      <div class="activities-grid" data-aos>
+
+        <!-- Otaku Day -->
+        <div class="activity-card" id="card-otaku">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-torii-gate"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Culture</span>
+              <h3 class="activity-title">Otaku Day</h3>
+              <p class="activity-desc">Journée consacrée à la culture japonaise, aux anime, cosplay, calligraphie, jeux, musique et projections.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+        <!-- Public Speaking -->
+        <div class="activity-card" id="card-speaking">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-person-chalkboard"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Leadership</span>
+              <h3 class="activity-title">Public Speaking & Leadership</h3>
+              <p class="activity-desc">Événement interactif en français, anglais et arabe pour développer charisme, confiance et prise de parole.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+        <!-- CETEC Talks -->
+        <div class="activity-card" id="card-talks">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Échange</span>
+              <h3 class="activity-title">CETEC Talks</h3>
+              <p class="activity-desc">Espace d'échange qui aide les étudiants à mieux comprendre des thèmes ciblés et pertinents.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+        <!-- Débats -->
+        <div class="activity-card" id="card-debats">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Réflexion</span>
+              <h3 class="activity-title">Débats CETEC</h3>
+              <p class="activity-desc">Débats organisés autour de sujets de société dans un climat de respect, d'écoute et de réflexion.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+        <!-- Échange de stages -->
+        <div class="activity-card" id="card-stages">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Professionnel</span>
+              <h3 class="activity-title">Échange de Stages</h3>
+              <p class="activity-desc">Partage d'expériences professionnelles entre étudiants : défis, conseils et retours du terrain.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+        <!-- Cours de langues -->
+        <div class="activity-card" id="card-langues">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-language"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Linguistique</span>
+              <h3 class="activity-title">Cours de Langues</h3>
+              <p class="activity-desc">Sessions d'apprentissage de Darija, allemand et autres langues pour l'intégration et les compétences.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+        <!-- Compétition Culturelle -->
+        <div class="activity-card activity-card-wide" id="card-competition">
+          <div class="activity-card-inner">
+            <div class="activity-icon-wrap">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="activity-content">
+              <span class="activity-tag">Compétition</span>
+              <h3 class="activity-title">Compétition Culturelle Régionale / Nationale</h3>
+              <p class="activity-desc">Concours de culture générale entre établissements qui stimule l'esprit critique, la mémoire, l'expression orale et le travail d'équipe.</p>
+            </div>
+            <div class="activity-hover-bar"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       STATISTIQUES
+  ======================== -->
+  <section class="stats section-padding bg-black" id="stats">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag section-tag-light">En chiffres</span>
+        <h2 class="section-title text-light">CETEC en <span class="highlight">chiffres</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="stats-grid" data-aos>
+        <div class="stat-item" id="stat-founded">
+          <div class="stat-number"><span class="count" data-target="2012" data-type="year">2012</span></div>
+          <div class="stat-label">Année de fondation</div>
+        </div>
+        <div class="stat-item" id="stat-countries">
+          <div class="stat-number">+<span class="count" data-target="15">0</span></div>
+          <div class="stat-label">Pays représentés</div>
+        </div>
+        <div class="stat-item" id="stat-participants">
+          <div class="stat-number">+<span class="count" data-target="150">0</span></div>
+          <div class="stat-label">Participants & audience</div>
+        </div>
+        <div class="stat-item" id="stat-schools">
+          <div class="stat-number">+<span class="count" data-target="30">0</span></div>
+          <div class="stat-label">Écoles participantes</div>
+        </div>
+        <div class="stat-item" id="stat-editions">
+          <div class="stat-number"><span class="stat-text">Plusieurs</span></div>
+          <div class="stat-label">Éditions régionales réussies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       NEWS & AGENDA (CALENDRIER)
+  ======================== -->
+  <section class="news section-padding" id="news">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Calendrier du club</span>
+        <h2 class="section-title">CETEC <span class="highlight">News & Agenda</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Suivez la vie du club ! Retrouvez nos prochains rendez-vous culturels ainsi que les moments forts de nos événements passés.</p>
+      </div>
+
+      <!-- Sélecteur d'onglets (Tabs) -->
+      <div class="agenda-tabs-control" data-aos>
+        <button class="agenda-tab-btn active" data-tab="upcoming">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Événements à venir</span>
+        </button>
+        <button class="agenda-tab-btn" data-tab="past">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Événements passés</span>
+        </button>
+      </div>
+
+      <!-- Grille des événements (Ligne chronologique / Timeline) -->
+      <div class="agenda-grid" data-aos>
+        
+        <!-- ================= Onglet : À Venir ================= -->
+        <div class="agenda-pane active" id="pane-upcoming">
+          <div class="timeline-container">
+            
+            <!-- Événement 1 (Gauche) -->
+            <div class="timeline-item timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date-wrap">
+                <span class="timeline-day">12</span>
+                <span class="timeline-month">Juin</span>
+              </div>
+              <div class="timeline-card">
+                <div class="event-meta">
+                  <span class="event-tag-badge tag-debat">Débat</span>
+                  <span class="event-time"><i class="fa-solid fa-clock"></i> 15:30</span>
+                  <span class="event-location"><i class="fa-solid fa-location-dot"></i> Amphi A, ENSA</span>
+                </div>
+                <h3 class="event-title">Debate Championship (Finale)</h3>
+                <p class="event-desc">La finale nationale opposant les meilleures équipes d'étudiants ingénieurs sur des débats d'actualité captivants.</p>
+                <a href="#contact" class="event-action-btn">
+                  <span>S'inscrire</span>
+                  <i class="fa-solid fa-user-plus"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Événement 2 (Droite) -->
+            <div class="timeline-item timeline-right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date-wrap">
+                <span class="timeline-day">19</span>
+                <span class="timeline-month">Juin</span>
+              </div>
+              <div class="timeline-card">
+                <div class="event-meta">
+                  <span class="event-tag-badge tag-culture">Culture</span>
+                  <span class="event-time"><i class="fa-solid fa-clock"></i> 17:00</span>
+                  <span class="event-location"><i class="fa-solid fa-location-dot"></i> Bibliothèque ENSA</span>
+                </div>
+                <h3 class="event-title">Café Littéraire & Poésie</h3>
+                <p class="event-desc">Rencontre de partage littéraire : lectures coups de cœur, poèmes originaux et critiques bienveillantes autour d'un bon café.</p>
+                <a href="#contact" class="event-action-btn">
+                  <span>Participer</span>
+                  <i class="fa-solid fa-check"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Événement 3 (Gauche) -->
+            <div class="timeline-item timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date-wrap">
+                <span class="timeline-day">26</span>
+                <span class="timeline-month">Juin</span>
+              </div>
+              <div class="timeline-card">
+                <div class="event-meta">
+                  <span class="event-tag-badge tag-leadership">Leadership</span>
+                  <span class="event-time"><i class="fa-solid fa-clock"></i> 18:00</span>
+                  <span class="event-location"><i class="fa-solid fa-location-dot"></i> Salle des Séminaires</span>
+                </div>
+                <h3 class="event-title">Speaking Club - Leadership</h3>
+                <p class="event-desc">Atelier interactif pour développer ses compétences de communication, de pitch, de rhétorique et de prise de parole impactante.</p>
+                <a href="#contact" class="event-action-btn">
+                  <span>Rejoindre</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ================= Onglet : Passés ================= -->
+        <div class="agenda-pane" id="pane-past">
+          <div class="timeline-container timeline-container-past">
+            
+            <!-- Événement Passé 1 (Gauche) -->
+            <div class="timeline-item timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date-wrap">
+                <span class="timeline-day">10</span>
+                <span class="timeline-month">Mai</span>
+              </div>
+              <div class="timeline-card">
+                <div class="event-meta">
+                  <span class="event-tag-badge tag-event">Événement</span>
+                  <span class="event-time"><i class="fa-solid fa-calendar"></i> Mai 2026</span>
+                  <span class="event-location"><i class="fa-solid fa-users"></i> +400 participants</span>
+                </div>
+                <h3 class="event-title">CETEC Otaku Day 2026</h3>
+                <p class="event-desc">Notre festival célébrant la pop-culture japonaise au Nord du Maroc : cosplay, quiz thématiques, tournoi gaming et stands de calligraphie.</p>
+                <a href="#galerie" class="event-action-btn">
+                  <span>Voir les photos</span>
+                  <i class="fa-solid fa-images"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Événement Passé 2 (Droite) -->
+            <div class="timeline-item timeline-right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date-wrap">
+                <span class="timeline-day">18</span>
+                <span class="timeline-month">Avr</span>
+              </div>
+              <div class="timeline-card">
+                <div class="event-meta">
+                  <span class="event-tag-badge tag-langues">Langues</span>
+                  <span class="event-time"><i class="fa-solid fa-calendar"></i> Avril 2026</span>
+                  <span class="event-location"><i class="fa-solid fa-earth-africa"></i> Échange culturel</span>
+                </div>
+                <h3 class="event-title">Atelier d'Intégration (Darija)</h3>
+                <p class="event-desc">Une session d'accueil conviviale conçue pour l'intégration des étudiants subsahariens et internationaux de l'ENSA.</p>
+                <a href="#videos" class="event-action-btn">
+                  <span>Voir l'aftermovie</span>
+                  <i class="fa-solid fa-circle-play"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Événement Passé 3 (Gauche) -->
+            <div class="timeline-item timeline-left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date-wrap">
+                <span class="timeline-day">05</span>
+                <span class="timeline-month">Mars</span>
+              </div>
+              <div class="timeline-card">
+                <div class="event-meta">
+                  <span class="event-tag-badge tag-reflexion">Réflexion</span>
+                  <span class="event-time"><i class="fa-solid fa-calendar"></i> Mars 2026</span>
+                  <span class="event-location"><i class="fa-solid fa-graduation-cap"></i> Table ronde</span>
+                </div>
+                <h3 class="event-title">Table Ronde : IA & Écriture</h3>
+                <p class="event-desc">Un espace d'échange avec des professeurs invités sur l'influence des intelligences artificielles génératives dans l'écriture créative.</p>
+                <span class="event-status-text"><i class="fa-solid fa-circle-check"></i> Terminé avec succès</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       ÉQUIPE
+  ======================== -->
+  <section class="equipe section-padding" id="equipe">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Les visages derrière CETEC</span>
+        <h2 class="section-title">Notre <span class="highlight">Équipe</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Des passionnés engagés pour faire rayonner la culture à l'ENSA Tétouan.</p>
+      </div>
+
+      <div class="team-grid" data-aos>
+
+        <!-- Président -->
+        <div class="team-card" id="card-president">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn du Président"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram du Président"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Président</h4>
+            <span class="team-role">Président</span>
+          </div>
+        </div>
+
+        <!-- Vice-président -->
+        <div class="team-card" id="card-vp">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn du VP"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram du VP"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du VP</h4>
+            <span class="team-role">Vice-Président</span>
+          </div>
+        </div>
+
+        <!-- Secrétaire général -->
+        <div class="team-card" id="card-sg">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn du SG"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram du SG"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Secrétaire</h4>
+            <span class="team-role">Secrétaire Général</span>
+          </div>
+        </div>
+
+        <!-- Trésorier -->
+        <div class="team-card" id="card-tresorier">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn du Trésorier"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram du Trésorier"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Trésorier</h4>
+            <span class="team-role">Trésorier</span>
+          </div>
+        </div>
+
+        <!-- Responsable communication -->
+        <div class="team-card" id="card-comm">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn Responsable Communication"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram Responsable Communication"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Responsable</h4>
+            <span class="team-role">Resp. Communication</span>
+          </div>
+        </div>
+
+        <!-- Responsable Média & Design -->
+        <div class="team-card" id="card-media">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn Responsable Média"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram Responsable Média"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Responsable</h4>
+            <span class="team-role">Resp. Média & Design</span>
+          </div>
+        </div>
+
+        <!-- Responsable Logistique -->
+        <div class="team-card" id="card-logistique">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn Resp Logistique"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram Resp Logistique"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Responsable</h4>
+            <span class="team-role">Resp. Logistique</span>
+          </div>
+        </div>
+
+        <!-- Responsable Sponsoring -->
+        <div class="team-card" id="card-sponsoring">
+          <div class="team-avatar">
+            <div class="avatar-placeholder">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="team-social">
+              <a href="#" class="social-btn linkedin" aria-label="LinkedIn Resp Sponsoring"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-btn instagram" aria-label="Instagram Resp Sponsoring"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Nom du Responsable</h4>
+            <span class="team-role">Resp. Sponsoring</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       GALERIE
+  ======================== -->
+  <section class="galerie section-padding bg-dark" id="galerie">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag section-tag-light">Nos moments</span>
+        <h2 class="section-title text-light">Notre <span class="highlight">Galerie</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc text-muted">Des souvenirs capturés, des moments partagés.</p>
+      </div>
+
+      <div class="gallery-filter" data-aos>
+        <button class="filter-btn active" data-filter="all" id="filter-all">Tout</button>
+        <button class="filter-btn" data-filter="otaku" id="filter-otaku">Otaku Day</button>
+        <button class="filter-btn" data-filter="speaking" id="filter-speaking">Public Speaking</button>
+        <button class="filter-btn" data-filter="talks" id="filter-talks">CETEC Talks</button>
+        <button class="filter-btn" data-filter="competition" id="filter-competition">Compétition</button>
+        <button class="filter-btn" data-filter="cultural" id="filter-cultural">Journée Culturelle</button>
+        <button class="filter-btn" data-filter="debats" id="filter-debats">Débats</button>
+      </div>
+
+      <div class="gallery-grid" data-aos id="gallery-grid">
+
+        <div class="gallery-item" data-category="otaku" id="gal-otaku-1">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-torii-gate"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Otaku Day</h4>
+              <p>Culture japonaise & Anime</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-large" data-category="speaking" id="gal-speaking-1">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-person-chalkboard"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Public Speaking</h4>
+              <p>Prise de parole & Leadership</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="talks" id="gal-talks-1">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>CETEC Talks</h4>
+              <p>Échange et idées</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="competition" id="gal-competition-1">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-trophy"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Compétition Culturelle</h4>
+              <p>Régionale & Nationale</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item gallery-large" data-category="cultural" id="gal-cultural-1">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-globe"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Journée Culturelle</h4>
+              <p>Rencontres internationales</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="debats" id="gal-debats-1">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Débats CETEC</h4>
+              <p>Réflexion & dialogue</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="otaku" id="gal-otaku-2">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-star"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Otaku Day</h4>
+              <p>Cosplay & Calligraphie</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="speaking" id="gal-speaking-2">
+          <div class="gallery-placeholder">
+            <div class="gallery-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-content">
+              <h4>Public Speaking</h4>
+              <p>Atelier expression</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       LIVRE D'OR (GUESTBOOK)
+  ======================== -->
+  <section class="guestbook section-padding bg-cream" id="livre-dor">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Partagez vos souvenirs</span>
+        <h2 class="section-title">Le Livre <span class="highlight">d'Or</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Laissez un message, un souvenir ou un mot d'encouragement. Vos mots font vivre notre communauté.</p>
+      </div>
+
+      <div class="guestbook-container" data-aos>
+        <!-- Formulaire de soumission -->
+        <div class="guestbook-form-wrap">
+          <h3 class="guestbook-form-title">Laisser un message</h3>
+          <form id="guestbook-form" novalidate>
+            <div class="form-group">
+              <label for="guestbook-name">Votre nom</label>
+              <input type="text" id="guestbook-name" class="form-control-guest" placeholder="Ex: Yasmine El Fassi" required />
+              <span class="error-msg-guest" id="error-guest-name"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="guestbook-role">Votre rôle / statut</label>
+              <select id="guestbook-role" class="form-control-guest">
+                <option value="Membre Actif">Membre Actif</option>
+                <option value="Alumni / Ancien membre">Alumni / Ancien membre</option>
+                <option value="Étudiant ENSA">Étudiant ENSA</option>
+                <option value="Visiteur">Visiteur</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guestbook-message">Votre message</label>
+              <textarea id="guestbook-message" class="form-control-guest" rows="4" placeholder="Écrivez votre message ou souvenir ici..." required></textarea>
+              <span class="error-msg-guest" id="error-guest-message"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="btn-guest-submit">
+              <span>Poster mon mot</span>
+              <i class="fa-solid fa-feather-pointed"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Tableau des Post-its -->
+        <div class="guestbook-board-wrap">
+          <div class="guestbook-board" id="guestbook-board">
+            <!-- Les post-its seront générés ici en JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       PARTENAIRES
+  ======================== -->
+  <section class="partenaires section-padding" id="partenaires">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag">Ils nous font confiance</span>
+        <h2 class="section-title">Nos <span class="highlight">Partenaires</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Nous remercions nos partenaires qui nous font confiance et accompagnent nos initiatives culturelles.</p>
+      </div>
+
+      <div class="partners-grid" data-aos>
+
+        <!-- ── LOGOS RÉELS ── -->
+
+        <!-- Ministère Jeunesse, Culture & Communication - Maroc -->
+        <div class="partner-card" id="partner-ministere">
+          <img src="assets/images/partners/ministere_maroc.png"
+               alt="Ministère de la Jeunesse, de la Culture et de la Communication - Maroc"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- République de Côte d'Ivoire -->
+        <div class="partner-card partner-card-large-logo" id="partner-cote-ivoire">
+          <img src="assets/images/partners/cote_ivoire.png"
+               alt="République de Côte d'Ivoire"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- LINX Power Energy Drink -->
+        <div class="partner-card" id="partner-linx">
+          <img src="assets/images/partners/linx.png"
+               alt="LINX Power Energy Drink"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- ELI Tetouan -->
+        <div class="partner-card partner-card-large-logo" id="partner-eli-tetouan">
+          <img src="assets/images/partners/eli_tetouan.png"
+               alt="ELI Tetouan"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- Institut Français -->
+        <div class="partner-card" id="partner-institut-francais">
+          <img src="assets/images/partners/institut_francais.png"
+               alt="Institut Français"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- Sidi Ali -->
+        <div class="partner-card" id="partner-sidi-ali">
+          <img src="assets/images/partners/sidi_ali.png"
+               alt="Sidi Ali"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- Dar Loughat -->
+        <div class="partner-card" id="partner-dar-loughat">
+          <img src="assets/images/partners/dar_loughat.png"
+               alt="Dar Loughat"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- CIH Bank -->
+        <div class="partner-card" id="partner-cih-bank">
+          <img src="assets/images/partners/cih_bank.png"
+               alt="CIH Bank"
+               class="partner-logo-img" />
+        </div>
+
+        <!-- Indomie -->
+        <div class="partner-card" id="partner-indomie">
+          <img src="assets/images/partners/indomie.png"
+               alt="Indomie"
+               class="partner-logo-img" />
+        </div>
+
+      </div>
+
+      <div class="partner-cta" data-aos>
+        <p>Vous souhaitez devenir partenaire de CETEC ?</p>
+        <a href="#contact" class="btn btn-primary" id="btn-partner">
+          <span>Nous contacter</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       CONTACT
+  ======================== -->
+  <section class="contact section-padding bg-dark" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos>
+        <span class="section-tag section-tag-light">Rejoignez-nous</span>
+        <h2 class="section-title text-light">Nous <span class="highlight">Contacter</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="contact-wrapper">
+        <!-- Contact Info -->
+        <div class="contact-info" data-aos>
+          <h3 class="contact-info-title">Restons en contact</h3>
+          <p class="contact-info-desc">
+            Une question, une idée de collaboration, ou simplement envie de rejoindre l'aventure CETEC ? Écrivez-nous !
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item" id="contact-email">
+              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-item-text">
+                <span class="contact-label">Email</span>
+                <a href="mailto:mrachidi142@gmail.com">mrachidi142@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item" id="contact-phone">
+              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-item-text">
+                <span class="contact-label">Responsable Sponsoring</span>
+                <a href="tel:0651421022">06 51 42 10 22</a>
+              </div>
+            </div>
+
+            <div class="contact-item" id="contact-location">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-item-text">
+                <span class="contact-label">Localisation</span>
+                <span>ENSA Tétouan, Maroc</span>
+              </div>
+            </div>
+
+            <div class="contact-item" id="contact-instagram">
+              <div class="contact-item-icon instagram-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div class="contact-item-text">
+                <span class="contact-label">Instagram</span>
+                <a href="https://www.instagram.com/cetec.club" target="_blank" rel="noopener">@CETEC.CLUB</a>
+              </div>
+            </div>
+
+            <div class="contact-item" id="contact-facebook">
+              <div class="contact-item-icon facebook-icon"><i class="fa-brands fa-facebook-f"></i></div>
+              <div class="contact-item-text">
+                <span class="contact-label">Facebook</span>
+                <a href="https://www.facebook.com/CETEC.CLUB" target="_blank" rel="noopener">@CETEC.CLUB</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap" data-aos>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group" id="group-name">
+                <label for="contact-name">Nom complet</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-user input-icon"></i>
+                  <input type="text" id="contact-name" name="name" placeholder="Votre nom" required />
+                </div>
+                <span class="form-error" id="error-name"></span>
+              </div>
+              <div class="form-group" id="group-email">
+                <label for="contact-email-input">Email</label>
+                <div class="input-wrap">
+                  <i class="fa-solid fa-envelope input-icon"></i>
+                  <input type="email" id="contact-email-input" name="email" placeholder="votre@email.com" required />
+                </div>
+                <span class="form-error" id="error-email"></span>
+              </div>
+            </div>
+            <div class="form-group" id="group-subject">
+              <label for="contact-subject">Sujet</label>
+              <div class="input-wrap">
+                <i class="fa-solid fa-tag input-icon"></i>
+                <input type="text" id="contact-subject" name="subject" placeholder="Sujet de votre message" required />
+              </div>
+              <span class="form-error" id="error-subject"></span>
+            </div>
+            <div class="form-group" id="group-message">
+              <label for="contact-message">Message</label>
+              <div class="input-wrap textarea-wrap">
+                <i class="fa-solid fa-message input-icon"></i>
+                <textarea id="contact-message" name="message" placeholder="Votre message..." rows="5" required></textarea>
+              </div>
+              <span class="form-error" id="error-message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="form-submit">
+              <span id="btn-submit-text">Envoyer le message</span>
+              <i class="fa-solid fa-paper-plane" id="btn-submit-icon"></i>
+            </button>
+            <div class="form-success" id="form-success" style="display:none;">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Message envoyé avec succès ! Nous reviendrons vers vous très bientôt.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       FOOTER
+  ======================== -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="#accueil" class="footer-logo-link">
+              <img src="assets/images/cetec_logo.png" alt="Logo CETEC" class="footer-logo-img" />
+              <span class="footer-logo-text">CETEC</span>
+            </a>
+            <p class="footer-slogan">Là où la culture rencontre l'excellence</p>
+            <p class="footer-desc">Club estudiantin culturel, social et linguistique de l'ENSA Tétouan depuis 2012.</p>
+          </div>
+
+          <!-- Liens rapides -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Liens rapides</h4>
+            <ul class="footer-links">
+              <li><a href="#accueil" id="footer-link-accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+              <li><a href="#apropos" id="footer-link-apropos"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
+              <li><a href="#activites" id="footer-link-activites"><i class="fa-solid fa-chevron-right"></i> Activités</a></li>
+              <li><a href="#equipe" id="footer-link-equipe"><i class="fa-solid fa-chevron-right"></i> Équipe</a></li>
+              <li><a href="#galerie" id="footer-link-galerie"><i class="fa-solid fa-chevron-right"></i> Galerie</a></li>
+              <li><a href="#contact" id="footer-link-contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Footer -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:mrachidi142@gmail.com">mrachidi142@gmail.com</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:0651421022">06 51 42 10 22</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>ENSA Tétouan, Maroc</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Réseaux sociaux</h4>
+            <div class="footer-socials">
+              <a href="https://www.instagram.com/cetec.club" target="_blank" rel="noopener" class="footer-social" id="footer-instagram" aria-label="Instagram CETEC">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com/CETEC.CLUB" target="_blank" rel="noopener" class="footer-social" id="footer-facebook" aria-label="Facebook CETEC">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="footer-social" id="footer-youtube" aria-label="YouTube CETEC">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="#" class="footer-social" id="footer-linkedin" aria-label="LinkedIn CETEC">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+            <p class="footer-follow">Suivez-nous pour ne rien manquer !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="footer-copy">© 2026 CETEC ENSA Tétouan. Tous droits réservés.</p>
+        <p class="footer-made">
+          Fait avec <i class="fa-solid fa-heart" style="color:#F5A11A"></i> pour la culture
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
